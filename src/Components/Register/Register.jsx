@@ -26,7 +26,7 @@ function getUserDate(eventInfo){
 
 async function sendRegisterDateToApi(){
 let {data} =  await axios.post(`https://sticky-note-fe.vercel.app/signup`,user);
-if(data.message=='success'){
+if(data.message==='success'){
   setisLoading(false);
   navigate('/login');
 }

@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import { createBrowserRouter ,RouterProvider } from 'react-router-dom';
 import Layout from './Components/Layout/Layout';
@@ -13,7 +13,7 @@ import ItemDetails from './Components/ItemDetails/ItemDetails';
 import jwtDecode from 'jwt-decode';
 import {useEffect, useState} from 'react';
 import ProtectedRout from './Components/ProtectedRout/ProtectedRout';
-import { Offline , Online} from 'react-detect-offline';
+import { Offline} from 'react-detect-offline';
 
 function App() {
 
@@ -44,7 +44,9 @@ function saveUserDate(){
       {path:'profile' , element: <ProtectedRout userDate={userDate}> <Profile userData={userDate} /></ProtectedRout>},
       {path:'tv' , element: <ProtectedRout userDate={userDate}> <Tv/></ProtectedRout>},
       {path:'login' , element: <Login saveUserDate={saveUserDate}/>},
-      {path:'register' , element: <Register/>}
+      {path:'register' , element: <Register/>},
+      {path:'*' , element: <Login/>}
+
   ]}
   ])
 
